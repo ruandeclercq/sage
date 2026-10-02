@@ -1,0 +1,6 @@
+interface:
+  display_name: "To Work Items"
+  short_description: "Turn plans or requests into work items"
+  default_prompt: "Use $to-work-items to turn this plan or request into thin vertical work items."
+policy:
+  allow_implicit_invocation: false

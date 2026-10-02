@@ -1,0 +1,71 @@
+#!/usr/bin/env python3
+import sys
+
+
+def main():
+    # Git passes the temporary commit message file path as the first argument
+    commit_msg_file = sys.argv[1]
+
+    with open(commit_msg_file, "r", encoding="utf-8") as file:
+        raw_lines = file.readlines()
+
+    # Strip trailing newlines and filter out Git comment lines (starting with #)
+    lines = [line.rstrip("\n") for line in raw_lines if not line.startswith("#")]
+
+    # If the message is completely empty, let Git handle it
+    if not lines or not "".join(lines).strip():
+        return
+
+    # 1. Validate Subject Line Length (<= 50 chars)
+    subject = lines[0]
+    if len(subject) > 50:
+        print(
+            f"ERROR: Commit subject line is too long ({len(subject)}/50 chars)."
+        )
+        print(f"Hint: '{subject[:30]}...'")
+        sys.exit(1)
+
+    # If there is more content after the subject line, check structure and body
+    if len(lines) > 1:
+        # 2. Validate Blank Second Line
+        if lines[1].strip() != "":
+            print("ERROR: A blank line must separate the subject line from the body.")
+            sys.exit(1)
+
+        # 3. Validate Body Line Length (<= 72 chars)
+        for index, line in enumerate(lines[2:], start=3):
+            if len(line) > 72:
+                print(
+                    "ERROR: Line "
+                    f"{index} in the commit body is too long ({len(line)}/72 chars)."
+                )
+                print(f"Hint: '{line[:30]}...'")
+                sys.exit(1)
+
+    # 4. Validate bullet lists have no blank lines between items
+    body = lines[2:]  # Skip subject and mandatory blank line
+
+    bullet_prefixes = ("- ", "* ", "+ ")
+
+    i = 0
+    while i < len(body):
+        line = body[i]
+
+        if line.startswith(bullet_prefixes):
+            # Look for blank lines immediately after a bullet
+            j = i + 1
+            blank_lines = 0
+
+            while j < len(body) and body[j].strip() == "":
+                blank_lines += 1
+                j += 1
+
+            if blank_lines and j < len(body) and body[j].startswith(bullet_prefixes):
+                print("ERROR: Do not leave blank lines between bullet list items.")
+                sys.exit(1)
+
+        i += 1
+
+
+if __name__ == "__main__":
+    main()

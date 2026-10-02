@@ -1,0 +1,18 @@
+Sage
+Copyright 2026 Ruan de Clercq
+Licensed under the Apache License, Version 2.0. See LICENSE.
+
+Sage includes model instructions adapted from OpenAI Codex.
+OpenAI Codex
+Copyright 2025 OpenAI
+
+Public source reference: codex-rs/models-manager/models.json,
+model instruction entries
+Revision: 14a477ea89712071944244022e8a10142845456e
+https://github.com/openai/codex/blob/14a477ea89712071944244022e8a10142845456e/codex-rs/models-manager/models.json
+
+The borrowed material is licensed under Apache License 2.0.
+A copy is provided in LICENSE.
+
+Modified by Ruan de Clercq: condensed and reorganized the instructions,
+customized the personality, and added Sage-specific workflows and policies.
