@@ -8,23 +8,27 @@ skills, and an agent definition for a delegate-and-review workflow.
 I'm a software engineer working on networking software. I need evidence-backed
 decisions, focused changes, and meaningful validation from a coding agent.
 
-The goal is to automate more of the work while maintaining high engineering
-standards.
+The goal is to gradually automate the steps I would otherwise take manually
+to get Codex to produce the quality I need.
 
 ## Why?
 
-This setup is an experiment in shaping a coding agent's behavior through
+When I repeatedly need to guide, review, or correct Codex in the same way, I
+try to turn that manual step into instructions or a reusable workflow. The
+setup evolves incrementally from those recurring interventions rather than
+trying to automate everything at once.
+
+This is an experiment in shaping a coding agent's behavior through
 instructions, skills, and lightweight orchestration rather than application
-code. The central question is: can a relatively small instruction layer plus
-lightweight delegation and review produce a more reliable coding workflow than
-a single general-purpose agent? That is a question this setup explores, not a
-proven result.
+code.
 
 The philosophy is simple:
 
 - Prefer evidence over assumptions, and make uncertainty explicit.
-- Investigate unfamiliar code before modifying it.
-- Keep changes small, scoped, and reversible where possible.
+- Prioritize clarity in code, documentation, and comments. Structure
+  documentation from the big picture to supporting details.
+- Deliver changes as thin vertical slices that can be independently reviewed
+  and validated.
 - Use skills for repeatable workflows.
 - Delegate code implementation with clear scope and acceptance criteria.
 - Review the result against the original task and validate before calling it done.
@@ -130,6 +134,10 @@ the changes and moves to the next item.
 ## Supporting skills
 
 ### `boring-engineering`
+
+I added this skill because I was manually running code simplification passes
+after each change. Including its checks in review is intended to automate
+that recurring step.
 
 [The boring-engineering skill](skills/boring-engineering/SKILL.md) is taken
 from [Alvin de Mesa's boring-engineering project](https://github.com/alvindemesadev/boring-engineering/blob/main/SKILL.md).
