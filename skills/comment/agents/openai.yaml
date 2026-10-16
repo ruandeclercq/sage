@@ -1,0 +1,3 @@
+interface:
+  display_name: "Comment code"
+  short_description: "Add and improve intent comments in source files"
