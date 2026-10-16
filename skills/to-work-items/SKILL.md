@@ -13,6 +13,9 @@ be implemented, reviewed, and validated independently.
    not invent requirements.
 
 2. Find the slices.
+   Each work item should deliver one observable behavior with explicit
+   acceptance checks. Split items that combine independently testable behaviors.
+   Keep tightly coupled implementation and tests together.
    Split only when a thin vertical slice improves reviewability or creates a
    useful commit boundary. Do not split small cohesive tasks. Merge
    artificial boundaries, and avoid technical-layer splits unless necessary.

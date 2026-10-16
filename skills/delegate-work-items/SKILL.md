@@ -5,10 +5,7 @@ description: Split a plan into thin vertical work items, then delegate, review, 
 
 # Workflow
 
-1. Read the plan and split it into thin vertical work items.
-   Preserve the plan's requirements. Each item must be independently
-   reviewable and testable, with clear scope and acceptance criteria.
-   Order dependencies first. Keep small cohesive tasks intact.
+1. Use `to-work-items` to turn the plan into ordered thin vertical work items.
 
 2. For each work item, implement, review, and commit.
    Use `delegate-review` with only that item's scope, constraints, and
