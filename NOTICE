@@ -16,3 +16,9 @@ A copy is provided in LICENSE.
 
 Modified by Ruan de Clercq: condensed and reorganized the instructions,
 customized the personality, and added Sage-specific workflows and policies.
+
+Sage includes the boring-engineering skill by Alvin de Mesa.
+Copyright (c) 2026 Alvin de Mesa
+Source: https://github.com/alvindemesadev/boring-engineering/blob/main/SKILL.md
+The skill is licensed under the MIT License.
+A copy is provided in skills/boring-engineering/LICENSE.

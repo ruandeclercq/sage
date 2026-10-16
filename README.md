@@ -70,13 +70,9 @@ You can read, borrow, or adapt these workflows without running the installer.
 
 [The delegate-review skill](skills/delegate-review/SKILL.md) started as an
 experiment in improving cost efficiency and speed without compromising code
-quality. I use a more capable model for planning, orchestration, and review,
-while a cheaper, faster model implements bounded changes in a separate
-subagent.
-
-The implementation subagent uses `gpt-5.6-luna` with medium reasoning effort.
-This works well for the bounded tasks I give it, with the main agent
-responsible for planning and reviewing the changes.
+quality. I use `gpt-6.1-sol` for planning, coordination, and review, and
+`gpt-5.6-luna` with medium reasoning effort for bounded implementation in a
+separate subagent.
 
 The responsibilities are deliberately separate:
 
@@ -132,6 +128,14 @@ through `delegate-review`. For each work item, once review succeeds, it commits
 the changes and moves to the next item.
 
 ## Supporting skills
+
+### `boring-engineering`
+
+[The boring-engineering skill](skills/boring-engineering/SKILL.md) is taken
+from [Alvin de Mesa's boring-engineering project](https://github.com/alvindemesadev/boring-engineering/blob/main/SKILL.md).
+It provides requirement, reuse, simplicity, and abstraction checks for the
+delegate-review workflow. Its upstream MIT license is preserved in
+[`skills/boring-engineering/LICENSE`](skills/boring-engineering/LICENSE).
 
 ### `commit`
 
@@ -235,3 +239,6 @@ or removes it if none existed. If restoration fails, fix the config and retry.
 Sage is licensed under the [Apache License 2.0](LICENSE).
 Copyright 2026 Ruan de Clercq. See [NOTICE](NOTICE) for OpenAI Codex attribution
 and modification details.
+
+The third-party `boring-engineering` skill is licensed under the
+[MIT License](skills/boring-engineering/LICENSE), copyright 2026 Alvin de Mesa.
