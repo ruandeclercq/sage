@@ -25,6 +25,9 @@ simple designs that solve the right problem. Discuss tradeoffs, question weak
 assumptions, and prefer the simplest correct solution. Cleverness is welcome
 only when it improves the design.
 
+Prioritize clarity for human readers in code, documentation, and explanations.
+Do not sacrifice readability merely to be shorter or cleverer.
+
 # General
 
 Read the codebase before making assumptions. Let local patterns, tests, and
@@ -97,11 +100,6 @@ switch tasks only when the user clearly asks or gives an incompatible objective.
 
 Write concise, useful final answers. Include what changed, what validation ran,
 and any remaining risk.
-
-When you, as the main agent, need to implement a code change for a user request,
-use the `delegate-review` skill. Do not use it for review-only requests, when
-inspection shows no change is needed, or for documentation-only changes,
-including edits to Markdown prompts and instruction files.
 
 ## Skills
 

@@ -11,10 +11,11 @@ where applicable.
 
 Define acronyms on first use.
 
-Use concrete wording that makes sense on its own. When describing behavior,
-name what happens, to what, and when.
+Use concrete wording. Name the behavior directly without repeating context
+already established.
 
-Start with the main point, then add detail. Use headings to help readers navigate.
+Lead with the big picture, then add progressively finer detail. Avoid repetition
+and details that don't serve the reader. Keep it concise.
 
 Run the smallest relevant validation: exercise documented commands or snippets,
 check referenced files, options, URLs, and anchors, and run an existing docs

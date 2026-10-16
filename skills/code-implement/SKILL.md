@@ -6,12 +6,14 @@ description: Surgical code implementation for feature work, bug fixes, refactors
 Run this process every time:
 
 1. Inspect the context.
-   Read relevant files, tests, patterns, and validation paths.
+   Read relevant files, tests, and validation paths. Inspect existing code that
+   performs similar operations and reuse its established helpers and abstractions.
    Completion criterion: the target, affected areas, local conventions, and
    validation path are known.
 
 2. Choose the smallest correct design.
-   Reuse existing abstractions, follow local style and language best-practicies+idioms.
+   Reuse existing abstractions, follow local style and language best practices
+   and idioms.
    Avoid speculative abstractions and unrelated behavior.
    Completion criterion: the approach satisfies the request with the smallest
    plausible change.
