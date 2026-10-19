@@ -102,9 +102,19 @@ flowchart LR
     R -->|Approved| D[Result and validation report]
 ```
 
-In my experience, separating implementation from review has noticeably improved
-the results. The main agent evaluates the code against the original task,
-rather than treating the subagent's completion report as proof that it is done.
+Delegation separates the contexts as well as the responsibilities. The worker
+starts with a bounded task rather than the full planning conversation. Its
+implementation exploration stays in its own context, while the main agent
+retains the broader requirements and receives a focused report. The main agent
+still inspects the actual changes and relevant code during review. This is
+about managing context, not necessarily reducing total token usage.
+
+In my experience, having a different agent review the implementation has
+noticeably improved the results. The reviewer evaluates the code against the
+original task without carrying the worker's full implementation history. That
+creates an opportunity to question assumptions rather than continue the same
+line of reasoning or accept a completion report as proof. Separate agents can
+still share blind spots, so direct inspection and validation remain essential.
 
 `delegate-review` returns the approved change, validation results, and remaining
 risks without committing. Documentation-only changes, review-only requests,
