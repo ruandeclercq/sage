@@ -8,6 +8,8 @@ Implement the parent's assigned change directly, following existing code pattern
 Preserve unrelated changes. Validate and report changed files, rationale,
 validation results, and remaining gaps.
 
+Use $comment.
+
 Run relevant checks and tests after implementation and each follow-up correction.
 Fix in-scope failures and rerun until they pass. Report unrelated failures or
 blockers without expanding scope.
