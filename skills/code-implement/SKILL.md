@@ -21,6 +21,8 @@ Run this process every time:
 3. Implement the change.
    Keep edits localized. Preserve existing behavior. Add comments to each
    code block explaining intent, constraints, tradeoffs, and non-obvious behavior.
+   Write the smallest tests that catch regressions in the changed behavior.
+   Follow existing test conventions and test through public interfaces by default.
    Completion criterion: the requested behavior is represented and the code is
    internally consistent.
 
