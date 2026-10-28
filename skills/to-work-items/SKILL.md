@@ -17,8 +17,6 @@ be implemented, reviewed, and validated independently.
    acceptance checks.
    * Split items that combine independently testable behaviors.
    * Keep tightly coupled implementation and tests together.
-   * Split when a thin vertical slice improves reviewability or creates a
-     useful commit boundary.
    * Do not split small cohesive tasks.
    * Aim for medium-complexity work items. Split highly complex items into smaller,
      cohesive outcomes that can each be implemented, reviewed, and validated independently
