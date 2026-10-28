@@ -13,12 +13,16 @@ be implemented, reviewed, and validated independently.
    not invent requirements.
 
 2. Find the slices.
-   Each work item should deliver one observable behavior with explicit
-   acceptance checks. Split items that combine independently testable behaviors.
-   Keep tightly coupled implementation and tests together.
-   Split only when a thin vertical slice improves reviewability or creates a
-   useful commit boundary. Do not split small cohesive tasks. Merge
-   artificial boundaries, and avoid technical-layer splits unless necessary.
+   * Each work item should deliver one observable behavior with explicit
+   acceptance checks.
+   * Split items that combine independently testable behaviors.
+   * Keep tightly coupled implementation and tests together.
+   * Split when a thin vertical slice improves reviewability or creates a
+     useful commit boundary.
+   * Do not split small cohesive tasks.
+   * Aim for medium-complexity work items. Split highly complex items into smaller,
+     cohesive outcomes that can each be implemented, reviewed, and validated independently
+   * Merge artificial boundaries, and avoid technical-layer splits unless necessary.
 
 3. Order the work.
    Identify dependencies and place prerequisite slices first. Avoid splitting
@@ -39,4 +43,4 @@ be implemented, reviewed, and validated independently.
    without a clear review or commit reason.
 
 Return the ordered work items and note any unresolved ambiguity. Do not edit
-code, create issues, or begin implementation unless explicitly requested.
+code, or begin implementation unless explicitly requested.
