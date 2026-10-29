@@ -5,15 +5,19 @@ description: Delegate a code change to a subagent, then review its implementatio
 
 # Workflow
 
+The coordinator delegates implementation to a worker, reviews the result, and
+handles documentation.
+
 Print all coordinator-worker messages verbatim in the main thread's commentary:
 outgoing messages before sending, incoming messages after receiving.
 
 1. Delegate the change.
    Invoke a fresh `delegate-worker` agent with `fork_turns: "none"`.
    Give it a self-contained task with the scope, constraints, and acceptance
-   criteria needed for the change. Ask it to implement the change directly,
-   validate, and report changed files, rationale, validation results, gaps,
-   and deviations.
+   criteria needed for the change. Delegate implementation, tests, and verification,
+   but keep documentation changes with the coordinator. Ask the worker to implement the
+   change directly, validate, and report changed files, rationale, validation
+   results, gaps, and deviations.
 
 2. Review the result for simplicity and correctness.
    * Review every change directly, including corrections and the final change
