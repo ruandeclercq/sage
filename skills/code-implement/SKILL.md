@@ -15,6 +15,7 @@ Run this process every time:
    Reuse existing abstractions, follow local style and language best practices
    and idioms.
    Avoid speculative abstractions and unrelated behavior.
+   Identify the smallest tests that demonstrate the behavior and catch regressions.
    Completion criterion: the approach satisfies the request with the smallest
    plausible change.
 
@@ -23,6 +24,9 @@ Run this process every time:
    code block explaining intent, constraints, tradeoffs, and non-obvious behavior.
    Write the smallest tests that catch regressions in the changed behavior.
    Follow existing test conventions and test through public interfaces by default.
+   Test generated output through its consumer where practical. Otherwise, assert
+   the consumer's contract and failure behavior, not incidental formatting or
+   implementation details.
    Completion criterion: the requested behavior is represented and the code is
    internally consistent.
 
