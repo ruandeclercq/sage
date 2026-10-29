@@ -74,9 +74,10 @@ You can read, borrow, or adapt these workflows without running the installer.
 
 [The delegate-review skill](skills/delegate-review/SKILL.md) started as an
 experiment in improving cost efficiency and speed without compromising code
-quality. I use `gpt-6.1-sol` for planning, coordination, and review, and
-`gpt-5.6-luna` with medium reasoning effort for bounded implementation in a
-separate subagent.
+quality. I use `gpt-6.1-sol` for planning, `gpt-6.1-terra` for coordination and
+review, and `gpt-5.6-luna` with medium reasoning effort for bounded
+implementation in a separate subagent. I prefer Terra's documentation writing,
+so the coordinator updates documentation after reviewing the implementation.
 
 The responsibilities are deliberately separate:
 
@@ -86,12 +87,14 @@ The responsibilities are deliberately separate:
 2. **The subagent implements and validates.** It edits the code and reports the
    changed files, rationale, validation results, and remaining gaps.
 3. **The main agent reviews the actual changes.** It checks correctness, tests,
-   documentation, and consistency with the codebase, including unnecessary
+   and consistency with the codebase, including unnecessary
    complexity and duplicated helpers.
 4. **The subagent addresses feedback.** The main agent sends specific
    corrections back to the same subagent rather than fixing the implementation
    itself. The subagent revises the change and validates again, then the main
    agent reviews the result. This repeats until approved.
+5. **The main agent updates documentation.** After implementation approval, it
+   writes and validates any needed documentation changes.
 
 ```mermaid
 flowchart LR
@@ -99,7 +102,8 @@ flowchart LR
     W --> R[Main agent reviews the changes]
     R -->|Corrections needed| F[Subagent revises and validates]
     F --> R
-    R -->|Approved| D[Result and validation report]
+    R -->|Approved| D[Main agent updates documentation]
+    D --> O[Result and validation report]
 ```
 
 Delegation separates the contexts as well as the responsibilities. The worker

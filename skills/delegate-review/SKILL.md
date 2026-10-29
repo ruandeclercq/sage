@@ -19,21 +19,23 @@ outgoing messages before sending, incoming messages after receiving.
    * Review every change directly, including corrections and the final change
      after takeover. Do not delegate reviews or spawn review subagents.
    * Use `boring-engineering`. Follow this workflow for corrections and reporting.
-   * Check correctness, tests, documentation, readability, comments, deep modules,
+   * Check correctness, tests, readability, comments, deep modules,
      and consistency with the codebase.
    * Request changes only for concrete defects or unmet requirements within the
      assigned scope. Do not expand the scope during review.
-   * Approve once all checks pass and no concrete defect remains.
+   * Approve the implementation once all checks pass and no concrete defect remains.
 
 3. Correct defects, then approve.
    * Send specific feedback to the same `delegate-worker` subagent thread and review
      each correction using Step 2.
    * A correction round is unsuccessful if the returned change still fails review.
    * After three unsuccessful correction rounds, stop delegating and take over the
-     remaining work yourself. Until that fallback, do not modify implementation or
-     documentation files yourself.
+     remaining work yourself. Until that fallback, do not modify implementation
+     files yourself.
    * During takeover, do not invoke `delegate-review` again. Complete the remaining
      fixes, validate, and review the final change using Step 2.
+   * After implementation approval, the coordinator updates and validates
+     documentation if needed.
    * In the final response, summarize the changes, validation performed and its
      results, and any remaining risks or unverified behavior. Do not create a Git
      commit as part of this workflow.
