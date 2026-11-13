@@ -1,7 +1,7 @@
 name = "delegate-worker"
 description = "Implements bounded code changes, validates them, fixes in-scope failures, and reports results and blockers."
-model = "gpt-5.6-luna"
-model_reasoning_effort = "medium"
+model = "gpt-6.1-terra"
+model_reasoning_effort = "low"
 
 developer_instructions = """
 Implement the parent's assigned change directly, following existing code patterns.

@@ -75,7 +75,7 @@ You can read, borrow, or adapt these workflows without running the installer.
 [The delegate-review skill](skills/delegate-review/SKILL.md) started as an
 experiment in improving cost efficiency and speed without compromising code
 quality. I use `gpt-6.1-sol` for planning, `gpt-6.1-terra` for coordination and
-review, and `gpt-5.6-luna` with medium reasoning effort for bounded
+review, and `gpt-6.1-terra` with low reasoning effort for bounded
 implementation in a separate subagent. I prefer Terra's documentation writing,
 so the coordinator updates documentation after reviewing the implementation.
 
