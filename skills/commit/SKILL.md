@@ -1,15 +1,17 @@
 ---
 name: commit
-description: Write/edit git commit messages
+description: Use when writing or editing a Git commit message.
 ---
 
 # Commit Skill: 50/72 Rule
 
-Use this skill whenever generating Git commit messages.
+Use this skill when creating a Git commit or working on a Git commit message.
 
 ## Objective
 
-When user invokes $commit, stage relevant changes and run `git commit`.
+When the user asks to create a commit, stage relevant changes and run
+`git commit`. When asked only to write or edit a commit message,
+do not create a commit.
 
 * Make the subject specific enough to identify the complete scope of the
   change without relying on the body. Name coordinated concerns when they
@@ -31,8 +33,8 @@ When user invokes $commit, stage relevant changes and run `git commit`.
 * Small non-bug-fix changes may only need a subject. Larger changes may need
   a short body.
 * Use sentence case.
-* MUST read the staged diff or exact commit diff before writing or
-  validating a commit message.
+* MUST read the staged diff or exact commit diff before writing a commit
+  message.
 
 ## Commit command
 
